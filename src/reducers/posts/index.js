@@ -1,4 +1,4 @@
-import {LIST_POSTS, DELETE_POST} from '../../actions/posts'
+import {LIST_POSTS, DELETE_POST, UPDATE_POST} from '../../actions/posts'
 
 const initialState = {
   data: []
@@ -16,6 +16,12 @@ export default (state = initialState, {type, payload}) => {
       return {
         ...state,
         data: state.data.filter(post => post.id !== payload.id)
+      }
+
+    case UPDATE_POST:
+      return {
+        ...state,
+        data: state.data.map(post => post.id == payload.id ? {...post, ...payload} : post)
       }
     default:
       return state

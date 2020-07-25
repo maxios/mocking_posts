@@ -2,6 +2,7 @@ import axios from 'axios';
 
 const LIST_POSTS = 'posts/list'
 const DELETE_POST = 'post/delete'
+const UPDATE_POST = 'post/update'
 
 const list_posts = () => {
   return dispatch => {
@@ -33,5 +34,21 @@ const delete_post = id => {
   }
 }
 
-export {LIST_POSTS, DELETE_POST}
-export {list_posts, delete_post}
+const update_post = (id, data) => {
+  return dispatch => {
+    axios({
+      method: 'put',
+      url: `https://jsonplaceholder.typicode.com/posts/${id}`,
+      data
+    })
+      .then(res => {
+        dispatch({
+          type: UPDATE_POST,
+          payload: res.data
+        })
+      })
+  }
+}
+
+export {LIST_POSTS, DELETE_POST, UPDATE_POST}
+export {list_posts, delete_post, update_post}
