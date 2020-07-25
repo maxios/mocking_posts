@@ -39,22 +39,20 @@ const UpdatePost = props => {
       <div className="bp3-form-group .modifier">
         <label className="bp3-label" htmlFor="form-group-input">
           Title
-          <span className="bp3-text-muted">(required)</span>
         </label>
         <div className="bp3-form-content">
           <div className="bp3-input-group .modifier">
-            <input id="form-group-input" onChange={handleTitleChange} value={title} type="text" className="bp3-input" style={{ width: 200 }} placeholder="Placeholder text" dir="auto" />
+            <input id="form-group-input" onChange={handleTitleChange} value={title} type="text" className="bp3-input" dir="auto" />
           </div>
         </div>
       </div>
       <div className="bp3-form-group .modifier">
         <label className="bp3-label" htmlFor="form-group-input">
           Body
-          <span className="bp3-text-muted">(required)</span>
         </label>
         <div className="bp3-form-content">
           <div className="bp3-input-group .modifier">
-            <input id="form-group-input" onChange={handleBodyChange} value={body} type="text" className="bp3-input" style={{ width: 200 }} placeholder="Placeholder text" dir="auto" />
+            <input id="form-group-input" onChange={handleBodyChange} value={body} type="text" className="bp3-input" dir="auto" />
           </div>
         </div>
       </div>

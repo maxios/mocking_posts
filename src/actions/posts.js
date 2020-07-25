@@ -16,6 +16,11 @@ const list_posts = () => {
           payload: res.data
         })
       })
+      .catch(err => {
+        dispatch({
+          type: 'error'
+        })
+      })
   }
 }
 
@@ -31,6 +36,12 @@ const delete_post = id => {
           payload: res.data
         })
       })
+      .catch(err => {
+        dispatch({
+          type: 'error'
+        })
+      })
+
   }
 }
 
