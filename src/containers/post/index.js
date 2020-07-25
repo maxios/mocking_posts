@@ -1,13 +1,18 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { Icon, Button } from '@blueprintjs/core'
 import { Link } from 'react-router-dom';
+import { delete_post } from '../../actions/posts';
 
 const post_by_id = post_id => post => post_id == post.id
 
 const Post = props => {
+  const dispatch = useDispatch();
   const { post_id } = props.match.params;
   const post = useSelector(state => state.posts.data.find(post_by_id(post_id)));
+  const handleDeletePost = () => {
+    dispatch(delete_post(post.id))
+  }
 
   return post ? (
     <div className="post__container bp3-card .bp3-elevation-3">
@@ -25,7 +30,7 @@ const Post = props => {
           <Button text='Edit' icon='edit'/>
         </div>
         <div className="post__action-button">
-          <Button text='Delete' icon='delete' intent='Danger'/>
+          <Button onClick={handleDeletePost} text='Delete' icon='delete' intent='Danger'/>
         </div>
       </div>
     </div>
