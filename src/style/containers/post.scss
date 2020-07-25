@@ -1,10 +1,24 @@
 .post__container {
   width: 500px;
   height: fit-content;
-  display: inline-block;
-  position: absolute;
+  position: fixed;
   margin-right: auto;
   margin-left: auto;
-  top: 0;
-  bottom: 0;
+  top: 100px;
+  left: 0;
+  right: 0;
+}
+
+.post__header {}
+.post__close-icon {
+  float: right;
+}
+
+.post__actions {
+  margin-top: 20px
+}
+
+.post__action-button {
+  display: inline-block;
+  margin-right: 20px;
 }
